@@ -376,8 +376,9 @@ header form input {
 /* line 28, ../sass/_browse.scss */
 .browse .post-box .description {
   padding-top: 10px;
+  height: 60px;
 }
-/* line 30, ../sass/_browse.scss */
+/* line 31, ../sass/_browse.scss */
 .browse .post-box .description h2 {
   font-size: 20px;
 }

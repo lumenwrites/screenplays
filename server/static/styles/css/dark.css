@@ -12,15 +12,16 @@ header {
 input {
   background: #111111;
   border: none;
+  color: #a2a8ab;
 }
 
-/* line 17, ../sass/dark.scss */
+/* line 18, ../sass/dark.scss */
 article,
 .post-detail article,
 .browse .post-box {
   background: #1f1f1f;
 }
-/* line 22, ../sass/dark.scss */
+/* line 23, ../sass/dark.scss */
 article h1, article h2, article h3, article h4, article h5, article h6, article a, article p, article li, article i, article *,
 .post-detail article h1,
 .post-detail article h2,
@@ -46,7 +47,7 @@ article h1, article h2, article h3, article h4, article h5, article h6, article 
 .browse .post-box * {
   color: #a2a8ab;
 }
-/* line 25, ../sass/dark.scss */
+/* line 26, ../sass/dark.scss */
 article h1, article hr,
 .post-detail article h1,
 .post-detail article hr,
@@ -55,19 +56,19 @@ article h1, article hr,
   border: none;
   border-bottom: 1px solid #5c5f60;
 }
-/* line 29, ../sass/dark.scss */
+/* line 30, ../sass/dark.scss */
 article .icons a,
 .post-detail article .icons a,
 .browse .post-box .icons a {
   color: #a2a8ab;
 }
 
-/* line 36, ../sass/dark.scss */
+/* line 37, ../sass/dark.scss */
 ::-webkit-scrollbar-track {
   background-color: #1f1f1f;
 }
 
-/* line 40, ../sass/dark.scss */
+/* line 41, ../sass/dark.scss */
 ::-webkit-scrollbar-thumb {
   background-color: #111111;
 }
