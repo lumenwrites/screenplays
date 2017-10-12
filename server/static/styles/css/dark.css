@@ -15,13 +15,39 @@ input {
   color: #a2a8ab;
 }
 
-/* line 18, ../sass/dark.scss */
+/* line 17, ../sass/dark.scss */
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* line 19, ../sass/dark.scss */
+.modal-header h1 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* line 24, ../sass/dark.scss */
+.modal-dialog .close {
+  color: white;
+}
+/* line 28, ../sass/dark.scss */
+.modal-dialog h3 {
+  color: #a2a8ab;
+}
+/* line 31, ../sass/dark.scss */
+.modal-dialog .modal-content {
+  background-color: #1f1f1f;
+}
+/* line 33, ../sass/dark.scss */
+.modal-dialog .modal-content p {
+  color: #a2a8ab;
+}
+
+/* line 39, ../sass/dark.scss */
 article,
 .post-detail article,
 .browse .post-box {
   background: #1f1f1f;
 }
-/* line 23, ../sass/dark.scss */
+/* line 44, ../sass/dark.scss */
 article h1, article h2, article h3, article h4, article h5, article h6, article a, article p, article li, article i, article *,
 .post-detail article h1,
 .post-detail article h2,
@@ -47,28 +73,31 @@ article h1, article h2, article h3, article h4, article h5, article h6, article 
 .browse .post-box * {
   color: #a2a8ab;
 }
-/* line 26, ../sass/dark.scss */
-article h1, article hr,
+/* line 47, ../sass/dark.scss */
+article h1,
 .post-detail article h1,
-.post-detail article hr,
-.browse .post-box h1,
-.browse .post-box hr {
-  border: none;
+.browse .post-box h1 {
   border-bottom: 1px solid #5c5f60;
 }
-/* line 30, ../sass/dark.scss */
+/* line 50, ../sass/dark.scss */
 article .icons a,
 .post-detail article .icons a,
 .browse .post-box .icons a {
   color: #a2a8ab;
 }
 
-/* line 37, ../sass/dark.scss */
+/* line 56, ../sass/dark.scss */
+hr {
+  border: none;
+  border-bottom: 1px solid #5c5f60;
+}
+
+/* line 60, ../sass/dark.scss */
 ::-webkit-scrollbar-track {
   background-color: #1f1f1f;
 }
 
-/* line 41, ../sass/dark.scss */
+/* line 64, ../sass/dark.scss */
 ::-webkit-scrollbar-thumb {
   background-color: #111111;
 }

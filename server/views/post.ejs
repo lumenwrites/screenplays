@@ -8,14 +8,26 @@
 
 		<article>
 		    <div class="icons">
-			<a href=""><i class="fa fa-imdb"></i>IMDB</a>
-			<a href=""><i class="fa fa-download"></i>PDF</a>
-			<a href=""><i class="fa fa-question-circle"></i>Help</a>
+			<% if(post.imdb){ %>
+			    <a href="<%- post.imdb -%>">
+				<i class="fa fa-imdb"></i>IMDB
+			    </a>
+			<% } %>
+			<% if(post.pdf){ %>
+			    <a href="<%- post.pdf -%>">
+				<i class="fa fa-download"></i>PDF
+			    </a>
+			<% } %>
+			<a data-toggle="modal" data-target="#help-modal">
+			    <i class="fa fa-question-circle"></i>Help
+			</a>
+			
 		    </div>
-		    <!-- <h1><%- post.title -%></h1> -->
+
 		    <div class="screenplay">
 			<div class="title-page">
-			    <%- post.titlePage -%>
+			    <h1><%- post.title -%></h1>			    
+			    <%//- post.titlePage -%>
 			</div>			    
 			<%- post.html -%>
 		    </div>
@@ -26,4 +38,6 @@
     </div> <!-- End .container -->
 </div> <!-- End .page-class -->
 
+
+<%- include('elements/help-modal') -%>
 <%- include('elements/footer') -%>

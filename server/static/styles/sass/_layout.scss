@@ -28,3 +28,11 @@ header {
 	}
     }
 }
+
+.modal-dialog {
+    margin-top: 140px;
+    .close {
+	position: absolute;
+	right: 20px;	
+    }
+}

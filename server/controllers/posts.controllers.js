@@ -35,7 +35,10 @@ export function getPosts(req, res) {
 		var meta = md.props
 		var post = {
 		    title: meta.title,
-		    image: meta.image,			
+		    image: meta.image,
+		    imdb: meta.imdb,
+		    pdf: meta.pdf,
+		    author: meta.author,   		    
 		    slug: item.filename.substring(0, item.filename.lastIndexOf('.'))
 		}
 
@@ -78,6 +81,9 @@ export function getPost(req, res) {
 	    title: meta.title,
 	    image: meta.image,			
 	    slug: meta.slug,
+	    imdb: meta.imdb,
+	    pdf: meta.pdf,
+	    author: meta.author,   		    
 	    titlePage: output.title_page_html,
 	    html: output.script_html
 	}

@@ -345,6 +345,16 @@ header form input {
   }
 }
 
+/* line 32, ../sass/_layout.scss */
+.modal-dialog {
+  margin-top: 140px;
+}
+/* line 34, ../sass/_layout.scss */
+.modal-dialog .close {
+  position: absolute;
+  right: 20px;
+}
+
 /* line 3, ../sass/_browse.scss */
 .browse .posts-wrapper {
   margin-right: -20px;
@@ -400,7 +410,7 @@ header form input {
 .post-detail article .icons {
   position: absolute;
   right: 40px;
-  top: 40px;
+  top: 10px;
 }
 /* line 16, ../sass/_post.scss */
 .post-detail article .icons a {
