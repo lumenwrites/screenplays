@@ -1,10 +1,13 @@
-var fs = require('fs')
-const mongoose =  require('mongoose')
-const Post = require('./models/post')
+import fs from 'fs'
+import path from 'path'
+import fountain from 'fountain-js'
+import ParseMarkdownMetadata from 'parse-markdown-metadata'
 
-const fountain = require('fountain-js')
-const ParseMarkdownMetadata = require('parse-markdown-metadata')
-const readFiles = require('./readfiles')
+import mongoose from 'mongoose'
+
+import Post from '../models/post.model'
+import readFiles from './readfiles'
+
 
 /* Connect to db.*/
 mongoose.Promise = global.Promise
@@ -15,13 +18,9 @@ mongoose.connect(MONGO_DB_URL, (error) => {
 })
 
 
-
-
 /* Save a post */
 function createPost(post) {
     console.log("Creating post " + post.slug)
-
-    post.tags = post.tags.replace(/\s/g, '').split(",")
 
     post = new Post(post)
 
@@ -30,11 +29,12 @@ function createPost(post) {
     })
 }
 
-
 /* Remove all posts */
+/* 
 Post.find().remove((post)=>{
     console.log(JSON.stringify(post) + " deleted")
 })
+*/
 
 /* Read all files from content directory */    
 readFiles(path.resolve(__dirname, '../content')).then(files => {
