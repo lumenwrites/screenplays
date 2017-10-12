@@ -12,7 +12,7 @@
 	"build-all": "npm run build-compass && npm run build-client-js && npm run build-server",
 	"serve-dev": "nodemon --exec babel-node --presets=latest -- ./server/server.js",
 	"develop": "concurrently --kill-others \"npm run compass-watch\" \"npm run webpack-watch\" \"npm run serve-dev\"",
-	"serve-production": "node ./server/dist/server.js"
+	"serve": "babel-node --presets=latest -- ./server/server.js"
     },
     "author": "",
     "license": "ISC",
