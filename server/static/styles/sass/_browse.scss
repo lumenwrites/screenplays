@@ -1,0 +1,28 @@
+.browse {
+
+    .posts-wrapper {
+	margin-right: -20px;
+    }
+    .post-box {
+	float: left;
+	width: calc(33.33% - 20px);
+	margin-right: 20px;
+	margin-top: 20px;
+
+	background: white;
+	border: 1px solid rgba(0,0,0,0.1);
+
+	text-align:center;
+
+	/* thumbnail image style is in _general.scss */
+
+	.description {
+	    padding-top:10px;
+	    h2 {
+		font-size: 20px;
+	    }
+	}
+
+    }
+}
+

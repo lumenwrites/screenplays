@@ -1,0 +1,351 @@
+/* General */
+/* line 2, ../sass/_general.scss */
+* {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 6, ../sass/_general.scss */
+body {
+  background: #f6f3ea;
+  min-height: 100vh;
+}
+
+/* line 11, ../sass/_general.scss */
+.page {
+  min-height: calc(100vh - 60px);
+}
+
+/* line 16, ../sass/_general.scss */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* line 20, ../sass/_general.scss */
+::-webkit-scrollbar-track {
+  background-color: #F2F2F2;
+}
+
+/* line 24, ../sass/_general.scss */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(110, 110, 110, 0.2);
+}
+
+/* Bootstrap customize */
+/* Remove padding on mobile */
+/* line 31, ../sass/_general.scss */
+.container {
+  max-width: 800px;
+}
+@media (max-width: 1024px) {
+  /* line 31, ../sass/_general.scss */
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* line 38, ../sass/_general.scss */
+  .col-md-12, .col-sm-12 {
+    padding: 0;
+  }
+}
+
+/* line 45, ../sass/_general.scss */
+.btn {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+/* line 49, ../sass/_general.scss */
+.btn:hover, .btn:active, .btn:focus, .btn:visited {
+  color: white;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Helpers */
+/* line 58, ../sass/_general.scss */
+.left {
+  float: left;
+}
+
+/* line 62, ../sass/_general.scss */
+.right {
+  float: right;
+}
+
+/* line 65, ../sass/_general.scss */
+.centered {
+  margin: auto;
+}
+
+/* line 68, ../sass/_general.scss */
+.center-text {
+  text-align: center;
+}
+
+/* line 71, ../sass/_general.scss */
+.hidden {
+  display: none;
+}
+
+/* line 75, ../sass/_general.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* Typography */
+/* line 81, ../sass/_general.scss */
+h1, h2, h3, h4 {
+  margin: 0;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 87, ../sass/_general.scss */
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  border-bottom: 1px solid #dddddd;
+  line-height: 50px;
+  margin-top: 0;
+}
+
+/* line 94, ../sass/_general.scss */
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* line 101, ../sass/_general.scss */
+a {
+  color: #008cba;
+  cursor: pointer;
+}
+/* line 104, ../sass/_general.scss */
+a:hover, a:active, a:focus, a:visited {
+  text-decoration: none;
+  color: #008cba;
+}
+
+/* line 111, ../sass/_general.scss */
+p {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* line 117, ../sass/_general.scss */
+.btn-cta {
+  font-family: "Lato";
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px 40px;
+  margin: 0;
+  width: 100%;
+  background: #eb5d00;
+  color: #fff;
+  font-weight: 300;
+  background: linear-gradient(to bottom, #ff6500, #f84200);
+  background: linear-gradient(to bottom, #0086ff, #006cf8);
+  /*blue*/
+  background: #4799eb;
+  box-shadow: 0 0 30px 2px rgba(34, 34, 34, 0.5);
+  white-space: normal;
+}
+/* line 133, ../sass/_general.scss */
+.btn-cta:hover, .btn-cta:active, .btn-cta:focus, .btn-cta:visited {
+  background: linear-gradient(to bottom, #ff6500, #f84200);
+  background: linear-gradient(to bottom, #0086ff, #006cf8);
+  /*blue*/
+  background: #4799eb;
+  box-shadow: 0 0 30px 2px rgba(34, 34, 34, 0.5);
+}
+
+/* line 141, ../sass/_general.scss */
+.btn-outline {
+  border: 1px solid #274059;
+}
+
+/* Dropdown */
+/* line 149, ../sass/_general.scss */
+.dropdown {
+  float: left;
+  margin-right: 5px;
+}
+/* line 152, ../sass/_general.scss */
+.dropdown li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* line 158, ../sass/_general.scss */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  min-width: 100%;
+  background: none;
+  /* border: 1px solid #274059;     */
+}
+/* line 163, ../sass/_general.scss */
+.dropdown:hover .dropdown-menu li a {
+  text-transform: capitalize;
+  background: #0e2439;
+  border: 1px solid #274059;
+  color: white;
+  margin: 0 -1px;
+}
+/* line 169, ../sass/_general.scss */
+.dropdown:hover .dropdown-menu li a:hover {
+  background: #274059;
+}
+
+/* line 177, ../sass/_general.scss */
+.alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  padding: 22px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Footer */
+/* line 188, ../sass/_general.scss */
+footer {
+  height: 40px;
+  padding: 0 10px;
+  background-color: #333a42;
+  color: #babfc2;
+}
+/* line 193, ../sass/_general.scss */
+footer a {
+  color: #999;
+  font-weight: bold;
+}
+
+/* Css magic that keeps images 16x9, background in the center. */
+/* line 201, ../sass/_general.scss */
+.image-wrapper {
+  width: 100%;
+  position: relative;
+}
+/* line 205, ../sass/_general.scss */
+.image-wrapper:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+/* line 211, ../sass/_general.scss */
+.image-wrapper .thumbnail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-position: 50% 50%;
+  background-size: cover;
+  margin: 0;
+  border: none;
+  background-color: #f6f3ea;
+}
+
+/* line 2, ../sass/_fountain.scss */
+.screenplay {
+  /* Scene heading */
+  /* Not sure if needed */
+}
+/* line 3, ../sass/_fountain.scss */
+.screenplay .title-page {
+  text-align: center;
+}
+/* line 7, ../sass/_fountain.scss */
+.screenplay h1, .screenplay h2, .screenplay h3, .screenplay h4, .screenplay p {
+  font-family: "Courier";
+}
+/* line 12, ../sass/_fountain.scss */
+.screenplay h2 {
+  font-weight: bold;
+}
+/* line 16, ../sass/_fountain.scss */
+.screenplay .dialogue {
+  margin-left: auto;
+  margin-right: auto;
+  width: 68%;
+  /* Character's name */
+}
+/* line 20, ../sass/_fountain.scss */
+.screenplay .dialogue h4 {
+  margin-bottom: 0;
+  margin-left: 23%;
+}
+/* line 21, ../sass/_fountain.scss */
+.screenplay .dialogue .parenthetical {
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 11%;
+}
+/* line 24, ../sass/_fountain.scss */
+.screenplay .dual-dialogue {
+  margin: 2em 0 0.9em 2%;
+  width: 95%;
+}
+/* line 26, ../sass/_fountain.scss */
+.screenplay .dual-dialogue .dialogue {
+  display: inline-block;
+  margin: 0;
+  width: 45%;
+}
+/* line 28, ../sass/_fountain.scss */
+.screenplay .centered {
+  text-align: center;
+  width: 92.5%;
+}
+/* line 29, ../sass/_fountain.scss */
+.screenplay .italic {
+  font-style: italic;
+}
+/* line 30, ../sass/_fountain.scss */
+.screenplay .bold {
+  font-weight: bold;
+}
+/* line 31, ../sass/_fountain.scss */
+.screenplay .underline {
+  text-decoration: underline;
+}
+
+/* line 3, ../sass/_browse.scss */
+.browse .posts-wrapper {
+  margin-right: -20px;
+}
+/* line 6, ../sass/_browse.scss */
+.browse .post-box {
+  float: left;
+  width: calc(33.33% - 20px);
+  margin-right: 20px;
+  margin-top: 20px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* thumbnail image style is in _general.scss */
+}
+/* line 19, ../sass/_browse.scss */
+.browse .post-box .description {
+  padding-top: 10px;
+}
+/* line 21, ../sass/_browse.scss */
+.browse .post-box .description h2 {
+  font-size: 20px;
+}
+
+/* line 2, ../sass/_post.scss */
+.post-detail article {
+  background: white;
+  padding: 40px;
+}
+/* line 6, ../sass/_post.scss */
+.post-detail article i {
+  font-size: 22px;
+  margin: 15px 0 0 5px;
+}

@@ -1,0 +1,29 @@
+<%- include('elements/head') -%>
+
+<div class="browse">
+    <div class="container">
+	<div class="row">
+	    <div class="col-md-12 col-sm-12">
+		<div class="posts-wrapper">		
+		    <% posts.forEach(function(post){ %>
+			<a href="/post/<%- post.slug -%>">
+			    <article class="post-box">
+				<div class="image-wrapper">
+				    <div class="thumbnail"
+					 style="background-image:
+						url('<%- post.image -%>');">
+				    </div>
+				</div>
+				<div class="description">
+				    <h2><%- post.title -%></h2>
+				</div>
+			    </article>
+			</a>
+		    <% }) %>
+		</div> <!-- End .posts-wrapper -->		
+	    </div> <!-- End .col-md-12 -->
+	</div> <!-- End .row -->
+    </div> <!-- End .container -->
+</div> <!-- End .page-class -->
+
+<%- include('elements/footer') -%>

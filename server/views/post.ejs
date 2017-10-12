@@ -1,0 +1,27 @@
+<%- include('elements/head') -%>
+
+<div class="post-detail">
+    <div class="container">
+	<div class="row">
+	    <div class="col-md-12 col-sm-12">
+
+		<article>
+		    <div class="right">
+			<a href=""><i class="fa fa-imdb"></i></a>
+			<a href=""><i class="fa fa-download"></i></a>			
+		    </div>
+		    <!-- <h1><%- post.title -%></h1> -->
+		    <div class="screenplay">
+			<div class="title-page">
+			    <%- post.titlePage -%>
+			</div>			    
+			<%- post.html -%>
+		    </div>
+		</article>
+
+	    </div> <!-- End .col-md-12 -->
+	</div> <!-- End .row -->
+    </div> <!-- End .container -->
+</div> <!-- End .page-class -->
+
+<%- include('elements/footer') -%>

@@ -1,0 +1,37 @@
+{
+    "name": "reveal",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+	"compass-watch": "cd ./server/static/styles && compass watch",
+	"webpack-watch": "cd ./server/static/js && webpack -w --config ./webpack.config.js --progress",
+	"build-compass": "cd ./server/static/styles && compass compile -e production --output-style compressed --force",	
+	"build-client-js": "cd ./server/static/js && NODE_ENV=production webpack -p --config ./webpack.config.js --progress",
+	"build-server": "babel-node  --presets=babel-preset-es2015 -d ./server/dist ./server",
+	"build-all": "npm run build-compass && npm run build-client-js && npm run build-server",	
+	"serve-dev": "nodemon --exec babel-node --presets=latest -- ./server/server.js",
+	"develop": "concurrently --kill-others \"npm run compass-watch\" \"npm run webpack-watch\" \"npm run serve-dev\"",
+	"serve-production": "node ./server/dist/server/server.js"	
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+	"body-parser": "^1.18.0",
+	"ejs": "^2.5.7",
+	"express": "^4.16.1",
+	"fountain-js": "0.0.1",
+	"marked": "^0.3.6",
+	"mongoose": "^4.12.1",
+	"parse-markdown-metadata": "^1.0.8",
+	"react": "^16.0.0"
+    },
+    "devDependencies": {
+	"babel-cli": "^6.26.0",
+	"babel-preset-latest": "^6.24.1",
+	"concurrently": "^3.5.0",
+	"nodemon": "^1.12.1",
+	"webpack": "^3.6.0"
+    }
+}
+

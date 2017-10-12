@@ -1,0 +1,45 @@
+/* line 3, ../sass/dark.scss */
+body {
+  background: #111111;
+}
+
+/* line 7, ../sass/dark.scss */
+article,
+.post-detail article,
+.browse .post-box {
+  background: #1f1f1f;
+}
+/* line 12, ../sass/dark.scss */
+article h1, article h2, article h3, article h4, article h5, article h6, article a, article p, article li, article i,
+.post-detail article h1,
+.post-detail article h2,
+.post-detail article h3,
+.post-detail article h4,
+.post-detail article h5,
+.post-detail article h6,
+.post-detail article a,
+.post-detail article p,
+.post-detail article li,
+.post-detail article i,
+.browse .post-box h1,
+.browse .post-box h2,
+.browse .post-box h3,
+.browse .post-box h4,
+.browse .post-box h5,
+.browse .post-box h6,
+.browse .post-box a,
+.browse .post-box p,
+.browse .post-box li,
+.browse .post-box i {
+  color: #a2a8ab;
+}
+
+/* line 18, ../sass/dark.scss */
+::-webkit-scrollbar-track {
+  background-color: #1f1f1f;
+}
+
+/* line 22, ../sass/dark.scss */
+::-webkit-scrollbar-thumb {
+  background-color: #111111;
+}
