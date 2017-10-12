@@ -11,8 +11,14 @@ router.route('/').get(postsControllers.getPosts);
 /* Get all Posts*/
 router.route('/posts').get(postsControllers.getPosts);
 
+/* Filter posts by author/series */
+router.route('/author/:author').get(postsControllers.getPosts);
+router.route('/series/:series').get(postsControllers.getPosts);
+
 /* Get one post by slug*/
 router.route('/post/:slug').get(postsControllers.getPost);
+
+
 
 export default router
 

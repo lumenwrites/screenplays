@@ -409,7 +409,7 @@ header form input {
 /* line 12, ../sass/_post.scss */
 .post-detail article .icons {
   position: absolute;
-  right: 40px;
+  left: 40px;
   top: 10px;
 }
 /* line 16, ../sass/_post.scss */

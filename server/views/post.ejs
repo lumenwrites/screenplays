@@ -8,6 +8,16 @@
 
 		<article>
 		    <div class="icons">
+			<% if(post.author){ %>
+			    <a href="/author/<%- post.authorslug -%>">
+				<i class="fa fa-user-circle"></i><%- post.author -%>
+			    </a>
+			<% } %>
+			<% if(post.series){ %>
+			    <a href="/series/<%- post.seriesslug -%>">
+				<i class="fa fa-list"></i><%- post.series -%>
+			    </a>
+			<% } %>						
 			<% if(post.imdb){ %>
 			    <a href="<%- post.imdb -%>">
 				<i class="fa fa-imdb"></i>IMDB
@@ -21,8 +31,8 @@
 			<a data-toggle="modal" data-target="#help-modal">
 			    <i class="fa fa-question-circle"></i>Help
 			</a>
-			
-		    </div>
+		    </div><!-- End .icons -->
+		    <hr/>
 
 		    <div class="screenplay">
 			<div class="title-page">

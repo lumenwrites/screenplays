@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import slug from 'slug';
 
 import fountain from 'fountain-js'
 import ParseMarkdownMetadata from 'parse-markdown-metadata'
@@ -42,15 +43,36 @@ export function getPosts(req, res) {
 		    slug: item.filename.substring(0, item.filename.lastIndexOf('.'))
 		}
 
-		/* Search */
+
+		var author = req.params.author
+		var series = req.params.series		
 		var query = req.query.query
 		if (query) {
+		    /* Search */
 		    /* If there's query, only add the posts that have it in meta. */
 		    query = query.toLowerCase()
 		    var searchIn = meta.title + meta.author + meta.series
 		    searchIn = searchIn.toLowerCase()
 		    if (searchIn.includes(query)) {
 			allPosts.push(post)
+		    }
+		} else if (author) {
+		    /* Author's posts */
+		    /* take author's slug and hackily search for it */
+		    author = author.replace(/-/g," ")
+		    var searchIn = meta.author.toLowerCase()
+		    if (searchIn.includes(author)) {
+			allPosts.push(post)
+		    }
+		} else if (series) {
+		    /* By series */
+		    series = series.replace(/-/g," ")
+		    if (meta.series) {
+			var searchIn = meta.series.toLowerCase()
+			console.log(series)
+			if (searchIn.includes(series)) {
+			    allPosts.push(post)
+			}
 		    }
 		} else {
 		    allPosts.push(post)
@@ -77,13 +99,19 @@ export function getPost(req, res) {
     var meta = md.props
     
     fountain.parse(fountainPost, (output)=>{
+	if (meta.series) {
+	    var seriesslug = slug(meta.series).toLowerCase()
+	}
 	var post = {
 	    title: meta.title,
 	    image: meta.image,			
 	    slug: meta.slug,
 	    imdb: meta.imdb,
 	    pdf: meta.pdf,
-	    author: meta.author,   		    
+	    author: meta.author,
+	    authorslug: slug(meta.author).toLowerCase(),	    
+	    series: meta.series,
+	    seriesslug:seriesslug,
 	    titlePage: output.title_page_html,
 	    html: output.script_html
 	}
