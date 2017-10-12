@@ -8,11 +8,12 @@ import mongoose from 'mongoose'
 // Connect to db.
 mongoose.Promise = global.Promise
 var MONGO_DB_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/screenplays'
-console.log("Connecting to the db at " + MONGO_DB_URL)
 mongoose.connect(MONGO_DB_URL, (error) => {
     if (error) {
 	console.error('Please make sure Mongodb is installed and running!') 
 	throw error
+    } else {
+	console.log("Connected to the db at " + MONGO_DB_URL)
     }
 })
 
