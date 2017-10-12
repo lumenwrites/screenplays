@@ -4,14 +4,32 @@ body {
     background: #111111;
 }
 
+header {
+    background: #1f1f1f;
+}
+
+input {
+    background: #111111;
+    border: none;
+}
+
+
 article,
 .post-detail article,
 .browse .post-box {
     background: #1f1f1f;
 
-    h1, h2, h3, h4, h5, h6, a, p, li, i {
+    h1, h2, h3, h4, h5, h6, a, p, li, i, * {
 	color: #a2a8ab;
     }
+    h1, hr {
+	border: none;
+	border-bottom: 1px solid #5c5f60;
+    }
+    .icons a {
+	color: #a2a8ab;
+    }
+    
 }
 
 

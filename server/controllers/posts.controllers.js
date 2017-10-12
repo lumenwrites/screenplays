@@ -28,6 +28,7 @@ export function getPosts(req, res) {
 	.then(files => {
 	    console.log( "loaded ", files.length );
 
+
 	    var allPosts = []
 	    files.forEach( (item, index) => {
 		/* Parse each file, add it to all posts */
@@ -38,7 +39,19 @@ export function getPosts(req, res) {
 		    image: meta.image,			
 		    slug: meta.slug
 		}
-		allPosts.push(post)
+
+		var query = req.query.query
+		if (query) {
+		    /* If there's query, only add the posts that have it in meta. */
+		    query = query.toLowerCase()
+		    var searchIn = meta.title + meta.author + meta.show
+		    searchIn = searchIn.toLowerCase()
+		    if (searchIn.includes(query)) {
+			allPosts.push(post)
+		    }
+		} else {
+		    allPosts.push(post)
+		}
 	    });
 
 	    /* Return list of posts (later I'll render it into a template here. */

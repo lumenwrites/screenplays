@@ -2,10 +2,26 @@
     article {
 	background: white;
 	padding: 40px;
+	margin-top: 10px;
 
-	i {
-	    font-size: 22px;
-	    margin: 15px 0 0 5px;
+	@media  (max-width: 500px) {
+	    padding:10px;
+	}
+
+	position: relative;
+	.icons {
+	    position: absolute;
+	    right: 40px;
+	    top: 40px;
+	    a {
+		font-size: 18px;
+		color: #373737;
+		margin-left: 5px;
+		i {
+		    font-size: 18px;
+		    margin: 15px 5px 0 5px;
+		}
+	    }
 	}
     }
 }

@@ -315,11 +315,47 @@ footer a {
   text-decoration: underline;
 }
 
+/* line 1, ../sass/_layout.scss */
+header {
+  background: white;
+  padding: 10px 0;
+}
+/* line 5, ../sass/_layout.scss */
+header .logo {
+  float: left;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  margin: 0px 10px 0 0;
+  background: gray;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+}
+/* line 19, ../sass/_layout.scss */
+header form input {
+  height: 40px;
+  padding: 0 10px;
+  width: calc(100% - 50px);
+}
+@media (max-width: 500px) {
+  /* line 19, ../sass/_layout.scss */
+  header form input {
+    width: calc(100% - 60px);
+  }
+}
+
 /* line 3, ../sass/_browse.scss */
 .browse .posts-wrapper {
   margin-right: -20px;
 }
-/* line 6, ../sass/_browse.scss */
+@media (max-width: 500px) {
+  /* line 3, ../sass/_browse.scss */
+  .browse .posts-wrapper {
+    margin-right: 0px;
+  }
+}
+/* line 10, ../sass/_browse.scss */
 .browse .post-box {
   float: left;
   width: calc(33.33% - 20px);
@@ -330,11 +366,18 @@ footer a {
   text-align: center;
   /* thumbnail image style is in _general.scss */
 }
-/* line 19, ../sass/_browse.scss */
+@media (max-width: 500px) {
+  /* line 10, ../sass/_browse.scss */
+  .browse .post-box {
+    width: 100%;
+    margin-right: 0px;
+  }
+}
+/* line 28, ../sass/_browse.scss */
 .browse .post-box .description {
   padding-top: 10px;
 }
-/* line 21, ../sass/_browse.scss */
+/* line 30, ../sass/_browse.scss */
 .browse .post-box .description h2 {
   font-size: 20px;
 }
@@ -343,9 +386,29 @@ footer a {
 .post-detail article {
   background: white;
   padding: 40px;
+  margin-top: 10px;
+  position: relative;
 }
-/* line 6, ../sass/_post.scss */
-.post-detail article i {
-  font-size: 22px;
-  margin: 15px 0 0 5px;
+@media (max-width: 500px) {
+  /* line 2, ../sass/_post.scss */
+  .post-detail article {
+    padding: 10px;
+  }
+}
+/* line 12, ../sass/_post.scss */
+.post-detail article .icons {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+/* line 16, ../sass/_post.scss */
+.post-detail article .icons a {
+  font-size: 18px;
+  color: #373737;
+  margin-left: 5px;
+}
+/* line 20, ../sass/_post.scss */
+.post-detail article .icons a i {
+  font-size: 18px;
+  margin: 15px 5px 0 5px;
 }
