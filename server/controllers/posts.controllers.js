@@ -117,7 +117,7 @@ export function getPost(req, res) {
 	var post = {
 	    title: meta.title,
 	    image: meta.image,			
-	    slug: meta.slug,
+	    slug: req.params.slug,
 	    imdb: meta.imdb,
 	    pdf: meta.pdf,
 	    author: meta.author,
