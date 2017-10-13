@@ -23,11 +23,9 @@
 				<i class="fa fa-imdb"></i>IMDB
 			    </a>
 			<% } %>
-			<% if(post.pdf){ %>
-			    <a href="<%- post.pdf -%>">
+			<a href="/scripts/<%- post.slug -%>.pdf">
 				<i class="fa fa-download"></i>PDF
 			    </a>
-			<% } %>
 			<a data-toggle="modal" data-target="#help-modal">
 			    <i class="fa fa-question-circle"></i>Help
 			</a>

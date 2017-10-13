@@ -28,6 +28,7 @@ app.set('views', __dirname + '/views')
 
 /* Serve static files */
 app.use('/static', express.static(path.resolve(__dirname, './static')))
+app.use('/scripts', express.static(path.resolve(__dirname, './content')))
 
 /* Connect routes */
 app.use('/', postsRoutes)

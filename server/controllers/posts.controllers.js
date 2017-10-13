@@ -31,59 +31,64 @@ export function getPosts(req, res) {
 
 	    var allPosts = []
 	    files.forEach( (item, index) => {
-		/* Parse each file, add it to all posts */
-		var md = new ParseMarkdownMetadata(item.contents)
-		var meta = md.props
-		if (meta.series) {
-		    var seriesslug = slug(meta.series).toLowerCase()
-		}
-		
-		var post = {
-		    title: meta.title,
-		    image: meta.image,
-		    imdb: meta.imdb,
-		    pdf: meta.pdf,
-		    author: meta.author,   		    
-		    authorslug: slug(meta.author).toLowerCase(),	    
-		    series: meta.series,
-		    seriesslug:seriesslug,
-		    slug: item.filename.substring(0, item.filename.lastIndexOf('.'))
-		}
-
-
-		var author = req.params.author
-		var series = req.params.series		
-		var query = req.query.query
-		if (query) {
-		    /* Search */
-		    /* If there's query, only add the posts that have it in meta. */
-		    query = query.toLowerCase()
-		    var searchIn = meta.title + meta.author + meta.series
-		    searchIn = searchIn.toLowerCase()
-		    if (searchIn.includes(query)) {
-			allPosts.push(post)
-		    }
-		} else if (author) {
-		    /* Author's posts */
-		    /* take author's slug and hackily search for it */
-		    author = author.replace(/-/g," ")
-		    var searchIn = meta.author.toLowerCase()
-		    if (searchIn.includes(author)) {
-			allPosts.push(post)
-		    }
-		} else if (series) {
-		    /* By series */
-		    series = series.replace(/-/g," ")
+		if (item.filename.includes('.fountain')) {
+		    /* Parse each file, add it to all posts */
+		    var md = new ParseMarkdownMetadata(item.contents)
+		    var meta = md.props
 		    if (meta.series) {
-			var searchIn = meta.series.toLowerCase()
-			console.log(series)
-			if (searchIn.includes(series)) {
+			var seriesslug = slug(meta.series).toLowerCase()
+		    }
+		    if (meta.author) {
+			var authorslug = slug(meta.author).toLowerCase()
+		    }
+		    
+		    var post = {
+			title: meta.title,
+			image: meta.image,
+			imdb: meta.imdb,
+			pdf: meta.pdf,
+			author: meta.author,   		    
+			authorslug: authorslug,
+			series: meta.series,
+			seriesslug:seriesslug,
+			slug: item.filename.substring(0, item.filename.lastIndexOf('.'))
+		    }
+
+
+		    var author = req.params.author
+		    var series = req.params.series		
+		    var query = req.query.query
+		    if (query) {
+			/* Search */
+			/* If there's query, only add the posts that have it in meta. */
+			query = query.toLowerCase()
+			var searchIn = meta.title + meta.author + meta.series
+			searchIn = searchIn.toLowerCase()
+			if (searchIn.includes(query)) {
 			    allPosts.push(post)
 			}
+		    } else if (author) {
+			/* Author's posts */
+			/* take author's slug and hackily search for it */
+			author = author.replace(/-/g," ")
+			var searchIn = meta.author.toLowerCase()
+			if (searchIn.includes(author)) {
+			    allPosts.push(post)
+			}
+		    } else if (series) {
+			/* By series */
+			series = series.replace(/-/g," ")
+			if (meta.series) {
+			    var searchIn = meta.series.toLowerCase()
+			    console.log(series)
+			    if (searchIn.includes(series)) {
+				allPosts.push(post)
+			    }
+			}
+		    } else {
+			allPosts.push(post)
 		    }
-		} else {
-		    allPosts.push(post)
-		}
+		} /* End if .fountain */
 	    });
 
 	    /* Return list of posts (later I'll render it into a template here. */
