@@ -34,12 +34,19 @@ export function getPosts(req, res) {
 		/* Parse each file, add it to all posts */
 		var md = new ParseMarkdownMetadata(item.contents)
 		var meta = md.props
+		if (meta.series) {
+		    var seriesslug = slug(meta.series).toLowerCase()
+		}
+		
 		var post = {
 		    title: meta.title,
 		    image: meta.image,
 		    imdb: meta.imdb,
 		    pdf: meta.pdf,
 		    author: meta.author,   		    
+		    authorslug: slug(meta.author).toLowerCase(),	    
+		    series: meta.series,
+		    seriesslug:seriesslug,
 		    slug: item.filename.substring(0, item.filename.lastIndexOf('.'))
 		}
 
