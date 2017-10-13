@@ -2,4 +2,3 @@
 [33mwarn[39m:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
 Running on port 3000!
 Connected to the db at mongodb://localhost:27017/screenplays
-loaded  42
