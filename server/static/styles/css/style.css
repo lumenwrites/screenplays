@@ -211,30 +211,31 @@ p {
 /* line 186, ../sass/_general.scss */
 footer {
   height: 40px;
+  margin-top: 20px;
   padding: 0 10px;
   background-color: #333a42;
   color: #babfc2;
 }
-/* line 191, ../sass/_general.scss */
+/* line 193, ../sass/_general.scss */
 footer a {
   color: #999;
   font-weight: bold;
 }
 
 /* Css magic that keeps images 16x9, background in the center. */
-/* line 199, ../sass/_general.scss */
+/* line 201, ../sass/_general.scss */
 .image-wrapper {
   width: 100%;
   position: relative;
 }
-/* line 203, ../sass/_general.scss */
+/* line 205, ../sass/_general.scss */
 .image-wrapper:after {
   padding-top: 56.25%;
   /* 16:9 ratio */
   display: block;
   content: '';
 }
-/* line 209, ../sass/_general.scss */
+/* line 211, ../sass/_general.scss */
 .image-wrapper .thumbnail {
   position: absolute;
   top: 0;

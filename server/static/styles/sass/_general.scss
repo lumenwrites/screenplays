@@ -185,9 +185,11 @@ p {
 /* Footer */
 footer {
     height: 40px;
+    margin-top: 20px;
     padding: 0 10px;
     background-color: #333a42;
-    color: #babfc2;    
+    color: #babfc2;
+
     a {
 	color: $gray;
 	font-weight: bold;

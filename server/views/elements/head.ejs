@@ -11,16 +11,22 @@
 	<link rel="stylesheet" href="/static/styles/css/style.css">
 
 	<!-- Meta -->
+	<% if(locals.post){ %>
+	<title><%- post.title -%> | Screenplay </title>
+	<meta property="twitter:title" content="<%- post.title -%>" />
+	<% } else { %>
 	<title><%- config.title -%></title>
+	<meta property="twitter:title" content="<%- config.title -%>" />
+	<% } %>
+
 	<meta name="description" content="<%- config.description -%>">
 	<meta name="author" content="<%- config.author -%>">
 	<meta name="keywords" content="<%- config.keywords -%>">
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:creator" content="" />
-	<meta property="twitter:site" content="" />  
+	<meta property="twitter:creator" content="<%- config.authorTwitter -%>" />
+	<meta property="twitter:site" content="<%- config.authorTwitter -%>" />  
 	<meta property="twitter:url" content="<%- config.url -%>" />
-	<meta property="twitter:title" content="<%- config.title -%>" />
 	<meta property="twitter:description" content="<%- config.description -%>" />
 	<meta property="twitter:image"
 	      content="<%- config.url -%>/static/img/social.png" />
@@ -29,6 +35,16 @@
 	<meta property="og:description" content="<%- config.description -%>">
 	<meta property="og:image"
 	      content="<%- config.url -%>/static/img/social.png" />
+
+	<!-- Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44003603-26">
+	</script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-44003603-26');
+	</script>
 	
     </head>
 
