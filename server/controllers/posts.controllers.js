@@ -111,7 +111,7 @@ export function getPost(req, res) {
 	    author: meta.author.split(",")[0],
 	    authorslug: slug(meta.author.split(",")[0] || "").toLowerCase(),
 	    series: meta.series,
-	    seriesslug: slug(meta.author || "").toLowerCase(),
+	    seriesslug: slug(meta.series || "").toLowerCase(),
 	    titlePage: output.title_page_html,
 	    html: output.script_html
 	}
