@@ -73,3 +73,45 @@ header {
 	right: 20px;	
     }
 }
+
+
+.subscription-form {
+    /* Email input */
+    input {
+	height: 40px;
+	float:left;
+	width: calc(100% - 120px);
+    }
+
+    /* Subscribe button */
+    .btn-default {
+	background: $orange;
+	color: white;
+	height: 40px;
+	float:left;
+	width: 120px;	    
+    }
+}
+
+.subscription-box {
+    margin-top: 20px;
+    .description {
+	padding: 19px 5px;
+	font-weight: bold;
+	@media  (max-width: 768px) {
+	    padding: 0px 5px;
+	    padding-top: 10px;
+	    text-align: center;
+	}
+    }
+    .form {
+	padding: 10px 5px;	
+    }
+    .panel {
+	margin-bottom: 0;
+    }
+    .panel-body {
+	padding: 5px 10px;
+    }
+}
+
