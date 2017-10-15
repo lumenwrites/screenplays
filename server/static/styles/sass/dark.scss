@@ -13,9 +13,9 @@ header {
 }
 
 input {
-    background: #111111;
+    background: #111111!important;
     border: none;
-    color: #a2a8ab;
+    color: #a2a8ab!important;
 }
 
 .modal-header {
@@ -40,25 +40,29 @@ input {
     }
 }
 
-article,
-.post-detail article,
-.browse .post-box {
-    background: #1f1f1f;
+article, .panel {
+    background: #1f1f1f!important;
 
-    h1, h2, h3, h4, h5, h6, a, p, li, i, * {
-	color: #a2a8ab;
-    }
     h1 {
 	border-bottom: 1px solid #5c5f60;
     }
     .icons a {
-	color: #a2a8ab;
+	color: #a2a8ab!important;
     }
-    
 }
-.fa {
-    color: #a2a8ab;    
+
+.subscription-box {
+    .panel, input {
+    border:none;	
+    }
+    .btn-default {
+	background: rgb(41, 41, 41);
+    }
 }
+h1, h2, h3, h4, h5, h6, a, p, li, i, *, .fa {
+    color: #a2a8ab;
+}
+
 .dropdown .dropdown-menu li a {
     background: #1f1f1f!important;
     color: #a2a8ab;    
