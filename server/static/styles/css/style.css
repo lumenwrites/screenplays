@@ -171,34 +171,31 @@ p {
 /* line 149, ../sass/_general.scss */
 .dropdown {
   float: left;
-  margin-right: 5px;
 }
-/* line 152, ../sass/_general.scss */
+/* line 151, ../sass/_general.scss */
 .dropdown li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* line 158, ../sass/_general.scss */
+/* line 157, ../sass/_general.scss */
 .dropdown:hover .dropdown-menu {
   display: block;
   min-width: 100%;
   background: none;
-  /* border: 1px solid #274059;     */
+  right: 0;
+  border: none;
+  width: auto;
+  left: -80px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
-/* line 163, ../sass/_general.scss */
+/* line 166, ../sass/_general.scss */
 .dropdown:hover .dropdown-menu li a {
   text-transform: capitalize;
-  background: #0e2439;
-  border: 1px solid #274059;
-  color: white;
-  margin: 0 -1px;
-}
-/* line 169, ../sass/_general.scss */
-.dropdown:hover .dropdown-menu li a:hover {
-  background: #274059;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* line 177, ../sass/_general.scss */
+/* line 175, ../sass/_general.scss */
 .alert {
   position: absolute;
   top: 0;
@@ -211,33 +208,33 @@ p {
 }
 
 /* Footer */
-/* line 188, ../sass/_general.scss */
+/* line 186, ../sass/_general.scss */
 footer {
   height: 40px;
   padding: 0 10px;
   background-color: #333a42;
   color: #babfc2;
 }
-/* line 193, ../sass/_general.scss */
+/* line 191, ../sass/_general.scss */
 footer a {
   color: #999;
   font-weight: bold;
 }
 
 /* Css magic that keeps images 16x9, background in the center. */
-/* line 201, ../sass/_general.scss */
+/* line 199, ../sass/_general.scss */
 .image-wrapper {
   width: 100%;
   position: relative;
 }
-/* line 205, ../sass/_general.scss */
+/* line 203, ../sass/_general.scss */
 .image-wrapper:after {
   padding-top: 56.25%;
   /* 16:9 ratio */
   display: block;
   content: '';
 }
-/* line 211, ../sass/_general.scss */
+/* line 209, ../sass/_general.scss */
 .image-wrapper .thumbnail {
   position: absolute;
   top: 0;
@@ -327,29 +324,78 @@ header .logo {
   height: 40px;
   border-radius: 40px;
   margin: 0px 10px 0 0;
-  background: gray;
+  background: #5e5796;
   text-align: center;
   line-height: 40px;
   color: white;
 }
-/* line 19, ../sass/_layout.scss */
+@media (max-width: 500px) {
+  /* line 5, ../sass/_layout.scss */
+  header .logo {
+    display: none;
+  }
+}
+/* line 21, ../sass/_layout.scss */
+header form {
+  float: left;
+  width: calc(100% - 50px - 40px);
+  position: relative;
+}
+@media (max-width: 500px) {
+  /* line 21, ../sass/_layout.scss */
+  header form {
+    width: calc(100% - 10px - 40px);
+    margin-left: 10px;
+  }
+}
+/* line 29, ../sass/_layout.scss */
 header form input {
   height: 40px;
   padding: 0 10px;
-  width: calc(100% - 50px);
+  width: 100%;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 @media (max-width: 500px) {
-  /* line 19, ../sass/_layout.scss */
+  /* line 29, ../sass/_layout.scss */
   header form input {
-    width: calc(100% - 60px);
+    font-size: 11.5px;
   }
 }
+/* line 41, ../sass/_layout.scss */
+header form .search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 40px;
+  width: 40px;
+  border: none;
+  background: none;
+  opacity: 0.4;
+}
+/* line 53, ../sass/_layout.scss */
+header .main-menu {
+  height: 40px;
+  float: left;
+  cursor: pointer;
+}
+/* line 57, ../sass/_layout.scss */
+header .main-menu .fa-bars {
+  line-height: 40px;
+  width: 40px;
+  font-size: 22px;
+  text-align: center;
+}
+/* line 63, ../sass/_layout.scss */
+header .main-menu .dropdown-menu i {
+  margin-right: 5px;
+}
 
-/* line 32, ../sass/_layout.scss */
+/* line 69, ../sass/_layout.scss */
 .modal-dialog {
   margin-top: 140px;
 }
-/* line 34, ../sass/_layout.scss */
+/* line 71, ../sass/_layout.scss */
 .modal-dialog .close {
   position: absolute;
   right: 20px;
@@ -398,7 +444,6 @@ header form input {
   background: white;
   padding: 40px;
   margin-top: 10px;
-  position: relative;
 }
 @media (max-width: 500px) {
   /* line 2, ../sass/_post.scss */
@@ -407,18 +452,12 @@ header form input {
   }
 }
 /* line 12, ../sass/_post.scss */
-.post-detail article .icons {
-  position: absolute;
-  left: 40px;
-  top: 10px;
-}
-/* line 16, ../sass/_post.scss */
 .post-detail article .icons a {
   font-size: 18px;
   color: #373737;
   margin-left: 5px;
 }
-/* line 20, ../sass/_post.scss */
+/* line 16, ../sass/_post.scss */
 .post-detail article .icons a i {
   font-size: 18px;
   margin: 15px 5px 0 5px;

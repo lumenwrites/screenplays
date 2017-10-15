@@ -7,47 +7,52 @@ body {
 header {
   background: #1f1f1f;
 }
+/* line 9, ../sass/dark.scss */
+header .logo {
+  background: #111111;
+  color: #a2a8ab;
+}
 
-/* line 11, ../sass/dark.scss */
+/* line 15, ../sass/dark.scss */
 input {
   background: #111111;
   border: none;
   color: #a2a8ab;
 }
 
-/* line 17, ../sass/dark.scss */
+/* line 21, ../sass/dark.scss */
 .modal-header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 19, ../sass/dark.scss */
+/* line 23, ../sass/dark.scss */
 .modal-header h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* line 24, ../sass/dark.scss */
+/* line 28, ../sass/dark.scss */
 .modal-dialog .close {
   color: white;
 }
-/* line 28, ../sass/dark.scss */
+/* line 32, ../sass/dark.scss */
 .modal-dialog h3 {
   color: #a2a8ab;
 }
-/* line 31, ../sass/dark.scss */
+/* line 35, ../sass/dark.scss */
 .modal-dialog .modal-content {
   background-color: #1f1f1f;
 }
-/* line 33, ../sass/dark.scss */
+/* line 37, ../sass/dark.scss */
 .modal-dialog .modal-content p {
   color: #a2a8ab;
 }
 
-/* line 39, ../sass/dark.scss */
+/* line 43, ../sass/dark.scss */
 article,
 .post-detail article,
 .browse .post-box {
   background: #1f1f1f;
 }
-/* line 44, ../sass/dark.scss */
+/* line 48, ../sass/dark.scss */
 article h1, article h2, article h3, article h4, article h5, article h6, article a, article p, article li, article i, article *,
 .post-detail article h1,
 .post-detail article h2,
@@ -73,31 +78,47 @@ article h1, article h2, article h3, article h4, article h5, article h6, article 
 .browse .post-box * {
   color: #a2a8ab;
 }
-/* line 47, ../sass/dark.scss */
+/* line 51, ../sass/dark.scss */
 article h1,
 .post-detail article h1,
 .browse .post-box h1 {
   border-bottom: 1px solid #5c5f60;
 }
-/* line 50, ../sass/dark.scss */
+/* line 54, ../sass/dark.scss */
 article .icons a,
 .post-detail article .icons a,
 .browse .post-box .icons a {
   color: #a2a8ab;
 }
 
-/* line 56, ../sass/dark.scss */
+/* line 59, ../sass/dark.scss */
+.fa {
+  color: #a2a8ab;
+}
+
+/* line 62, ../sass/dark.scss */
+.dropdown .dropdown-menu li a {
+  background: #1f1f1f !important;
+  color: #a2a8ab;
+  border-bottom: rgba(255, 255, 255, 0.15);
+}
+/* line 66, ../sass/dark.scss */
+.dropdown .dropdown-menu li a:hover {
+  color: white;
+}
+
+/* line 71, ../sass/dark.scss */
 hr {
   border: none;
   border-bottom: 1px solid #5c5f60;
 }
 
-/* line 60, ../sass/dark.scss */
+/* line 75, ../sass/dark.scss */
 ::-webkit-scrollbar-track {
   background-color: #1f1f1f;
 }
 
-/* line 64, ../sass/dark.scss */
+/* line 79, ../sass/dark.scss */
 ::-webkit-scrollbar-thumb {
   background-color: #111111;
 }

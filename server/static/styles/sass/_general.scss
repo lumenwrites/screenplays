@@ -148,7 +148,6 @@ p {
 /* Dropdown */
 .dropdown {
     float: left;
-    margin-right: 5px;
     li {
 	border-bottom: 1px solid rgba(0,0,0,.15);
     }
@@ -159,16 +158,15 @@ p {
     display: block;
     min-width: 100%;
     background: none;
-    /* border: 1px solid #274059;     */
+    right: 0;
+    border: none;
+    width: auto;
+    left: -80px;
+    border: 1px solid rgba(0,0,0,0.15);
     li a {
 	text-transform: capitalize;
-	background: #0e2439;	
-	border: 1px solid #274059;    
-	color: white;
-	margin: 0 -1px;
-	&:hover {
-	    background: #274059;
-	}
+	background: white;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     }
 }
 

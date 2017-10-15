@@ -17,7 +17,9 @@
 			    <a href="/series/<%- post.seriesslug -%>">
 				<i class="fa fa-list"></i><%- post.series -%>
 			    </a>
-			<% } %>						
+			<% } %>
+			<!-- clearfix only on mobile -->
+			<div class="clearfix visible-xs"></div>
 			<% if(post.imdb){ %>
 			    <a href="<%- post.imdb -%>">
 				<i class="fa fa-imdb"></i>IMDB
@@ -26,10 +28,9 @@
 			<a href="/scripts/<%- post.slug -%>.pdf">
 			    <i class="fa fa-download"></i>PDF
 			</a>
-			<a data-toggle="modal" data-target="#help-modal">
-			    <i class="fa fa-question-circle"></i>Help
-			</a>
 		    </div><!-- End .icons -->
+
+
 		    <hr/>
 
 		    <div class="screenplay">

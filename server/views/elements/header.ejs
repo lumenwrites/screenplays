@@ -7,9 +7,25 @@
 		</a>
 		<form action="/" method="get">
 		    <input type="text" name="query"
-		    placeholder="Search for screenplays by title, show, or author...">
-		    
-		</form>    
+			   placeholder="Find screenplay by Title, Show, or Author...">
+		    <button class="search-button" type="submit">
+			<i class="fa fa-search"></i>
+		    </button>
+		</form>
+		<div class="main-menu dropdown">
+		    <i class="fa fa-bars"></i>
+
+		    <ul class="dropdown-menu" role="menu">
+			<li>
+			    <a data-toggle="modal" data-target="#help-modal">
+				<i class="fa fa-question-circle"></i>Help
+			    </a>
+			    <a id="toggleDarkInterface">
+				<i class="fa fa-adjust"></i> Dark mode
+			    </a>
+			</li>
+		    </ul>			
+		</div>
 	    </div> <!-- End .col-md-12 -->
 	</div> <!-- End .row -->
     </div> <!-- End .container -->

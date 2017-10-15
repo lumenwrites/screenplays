@@ -59,7 +59,7 @@ Mousetrap.bind('f', function(e) {
 })
 
 /* Dark interface */
-Mousetrap.bind('d', function(e) {
+function toggleDarkInterface() {
     if (localStorage.getItem("darkInterface")) {
 	/* Remove dark style */
 	localStorage.removeItem("darkInterface");
@@ -75,8 +75,13 @@ Mousetrap.bind('d', function(e) {
 	cssNode.media = 'screen';
 	headID.appendChild(cssNode);
     }
+}
+Mousetrap.bind('d', function(e) {
+    toggleDarkInterface();
 });
-
+$( "#toggleDarkInterface" ).click(function() {
+    toggleDarkInterface();
+})
 /* Autoscroll */
 function pageScroll(speed) {
     window.scrollBy(0,1);

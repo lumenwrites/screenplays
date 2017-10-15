@@ -6,6 +6,10 @@ body {
 
 header {
     background: #1f1f1f;
+    .logo {
+	background: #111111;
+	color: #a2a8ab;
+    }
 }
 
 input {
@@ -51,6 +55,17 @@ article,
 	color: #a2a8ab;
     }
     
+}
+.fa {
+    color: #a2a8ab;    
+}
+.dropdown .dropdown-menu li a {
+    background: #1f1f1f!important;
+    color: #a2a8ab;    
+    border-bottom: rgba(255,255,255,0.15);
+    &:hover {
+	color:white;
+    }
 }
 
 hr {

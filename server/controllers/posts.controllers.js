@@ -27,7 +27,7 @@ export function getPosts(req, res) {
     /* Read all files from content directory */    
     readFiles(path.resolve(__dirname, '../content'))
 	.then(files => {
-	    console.log( "loaded ", files.length );
+	    console.log( `Fetched ${files.length} screenplays`)
 
 	    var allPosts = []
 	    files.forEach( (item, index) => {
@@ -35,53 +35,44 @@ export function getPosts(req, res) {
 		    /* Parse each file, add it to all posts */
 		    var md = new ParseMarkdownMetadata(item.contents)
 		    var meta = md.props
-		    if (meta.series) {
-			var seriesslug = slug(meta.series).toLowerCase()
-		    }
-		    if (meta.author) {
-			var authorslug = slug(meta.author).toLowerCase()
-		    }
-		    
+
 		    var post = {
 			title: meta.title,
 			image: meta.image,
 			imdb: meta.imdb,
 			pdf: meta.pdf,
-			author: meta.author,   		    
-			authorslug: authorslug,
+			author: meta.author.split(",")[0],   		    
+			authorslug: slug(meta.author.split(",")[0] || "").toLowerCase(),
 			series: meta.series,
-			seriesslug:seriesslug,
+			seriesslug: slug(meta.series || "").toLowerCase(),
 			slug: item.filename.substring(0, item.filename.lastIndexOf('.'))
 		    }
 
-
-		    var author = req.params.author
-		    var series = req.params.series		
-		    var query = req.query.query
-		    if (query) {
-			/* Search */
+		    if (req.query.query) {
+			/* Filter by search query */
+			var query = req.query.query
 			/* If there's query, only add the posts that have it in meta. */
 			query = query.toLowerCase()
+			console.log("Query " + query)
 			var searchIn = meta.title + meta.author + meta.series
-			searchIn = searchIn.toLowerCase()
-			if (searchIn.includes(query)) {
+			console.log("Search in " + searchIn)			
+			if (searchIn.toLowerCase().includes(query)) {
 			    allPosts.push(post)
 			}
-		    } else if (author) {
-			/* Author's posts */
-			/* take author's slug and hackily search for it */
+		    } else if (req.params.author) {
+			/* Filter by Author */
+			var author = req.params.author
+			/* Replace dashes with spaces in slug */
 			author = author.replace(/-/g," ")
-			var searchIn = meta.author.toLowerCase()
-			if (searchIn.includes(author)) {
+			if (meta.author.toLowerCase().includes(author)) {
 			    allPosts.push(post)
 			}
-		    } else if (series) {
-			/* By series */
+		    } else if (req.params.series) {
+			/* Filter by Series */
+			var series = req.params.series
 			series = series.replace(/-/g," ")
 			if (meta.series) {
-			    var searchIn = meta.series.toLowerCase()
-			    console.log(series)
-			    if (searchIn.includes(series)) {
+			    if (meta.series.toLowerCase().includes(series)) {
 				allPosts.push(post)
 			    }
 			}
@@ -111,19 +102,16 @@ export function getPost(req, res) {
     var meta = md.props
     
     fountain.parse(fountainPost, (output)=>{
-	if (meta.series) {
-	    var seriesslug = slug(meta.series).toLowerCase()
-	}
 	var post = {
 	    title: meta.title,
 	    image: meta.image,			
 	    slug: req.params.slug,
 	    imdb: meta.imdb,
 	    pdf: meta.pdf,
-	    author: meta.author,
-	    authorslug: slug(meta.author).toLowerCase(),	    
+	    author: meta.author.split(",")[0],
+	    authorslug: slug(meta.author.split(",")[0] || "").toLowerCase(),
 	    series: meta.series,
-	    seriesslug:seriesslug,
+	    seriesslug: slug(meta.author || "").toLowerCase(),
 	    titlePage: output.title_page_html,
 	    html: output.script_html
 	}
