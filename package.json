@@ -9,7 +9,7 @@
 	"build:compass": "cd ./server/static/styles && compass compile -e production --output-style compressed --force",
 	"build:clientjs": "cd ./server/static/js && NODE_ENV=production webpack -p --config ./webpack.config.js --progress",
 	"build:server": "cd ./server && webpack --config ./webpack.config.js",
-	"build:all": "npm run build:compass && npm run build:clientjs",
+	"build:all": "npm run build:compass && npm run build:clientjs", 
 	"import-posts": "babel-node --presets=latest -- ./server/utils/importscripts.js",
 	"dev:server": "nodemon --exec babel-node --presets=latest -- ./server/server.js",
 	"develop": "concurrently --kill-others \"npm run watch:compass\" \"npm run watch:clientjs\" \"npm run dev:server\"",
