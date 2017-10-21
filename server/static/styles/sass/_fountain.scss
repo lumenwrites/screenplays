@@ -20,10 +20,17 @@
 	 h4 { margin-bottom: 0; margin-left: 23%; }
 	 .parenthetical { margin-bottom: 0; margin-top: 0; margin-left: 11%;}
     }
+    .transition {
+	text-align: right;
+    }
     /* Not sure if needed */
     .dual-dialogue {
 	margin: 2em 0 0.9em 2%; width: 95%;
-	.dialogue { display: inline-block; margin: 0; width: 45%; }	
+	.dialogue {
+	    display: inline-block;
+	    margin: 0;
+	    width: 45%;
+	}	
     }
     .centered { text-align: center; width: 92.5%; }
     .italic { font-style: italic; }

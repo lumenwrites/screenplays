@@ -1,27 +1,43 @@
-var webpack = require('webpack');
-var path = require('path');
-var fs = require('fs');
+const path = require('path')
 
 module.exports = {
-    entry: path.resolve(__dirname, 'server.js'),
+    /* Inform webpack that we're building a bundle for node.js, not browser. */
     target: 'node',
+    /* Tell webpack the root file of our app */
+    entry: './server.js',
+    /* Tell webpack to put output file into ./build/server.js. */
     output: {
-	path: __dirname + '/dist/',
-	filename: 'server.bundle.js',
-	libraryTarget: 'commonjs2'	
+	filename: 'server.js',
+	path: path.resolve(__dirname, 'build')
     },
+
+    /* Run babel on all files it runs through,
+       converting ES6 and JSX code into regular ES5. */
     module: {
-	loaders: [{
-	    test: /\.js$/,
-	    exclude: /node_modules/,
-	    loader: 'babel-loader',
-	    query: {
-		presets: ['es2015']
-	    }
-	}, {
-	    test: /\.json$/,
-	    exclude: /node_modules/,
-	    loader: 'json-loader!json-loader'
-	}]
+	rules: [
+	    {
+		test: /\.js?$/,
+		loader: 'babel-loader',
+		exclude: /node_modules/,
+		options: {
+		    presets: [
+			'latest'
+		    ]
+		}
+	    },
+	    {
+		test: /\.fountain/,
+		use: 'raw-loader'
+	    }	    
+	]
     }
 }
+
+/*
+,
+      {
+	  test: /\.json$/,
+	  exclude: /node_modules/,
+	  loader: 'json-loader!json-loader'
+      }
+*/

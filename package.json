@@ -4,14 +4,15 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-	"compass-watch": "cd ./server/static/styles && compass watch",
-	"webpack-watch": "cd ./server/static/js && webpack -w --config ./webpack.config.js --progress",
-	"build-compass": "cd ./server/static/styles && compass compile -e production --output-style compressed --force",
-	"build-client-js": "cd ./server/static/js && NODE_ENV=production webpack -p --config ./webpack.config.js --progress",
-	"build-all": "npm run build-compass && npm run build-client-js",
+	"watch:compass": "cd ./server/static/styles && compass watch",
+	"watch:clientjs": "cd ./server/static/js && webpack -w --config ./webpack.config.js --progress",
+	"build:compass": "cd ./server/static/styles && compass compile -e production --output-style compressed --force",
+	"build:clientjs": "cd ./server/static/js && NODE_ENV=production webpack -p --config ./webpack.config.js --progress",
+	"build:server": "cd ./server && webpack --config ./webpack.config.js",
+	"build:all": "npm run build:compass && npm run build:clientjs",
 	"import-posts": "babel-node --presets=latest -- ./server/utils/importscripts.js",
-	"serve-dev": "nodemon --exec babel-node --presets=latest -- ./server/server.js",
-	"develop": "concurrently --kill-others \"npm run compass-watch\" \"npm run webpack-watch\" \"npm run serve-dev\"",
+	"dev:server": "nodemon --exec babel-node --presets=latest -- ./server/server.js",
+	"develop": "concurrently --kill-others \"npm run watch:compass\" \"npm run watch:clientjs\" \"npm run dev:server\"",
 	"serve": " forever start ./server/index.js > log.txt"
     },
     "author": "",
@@ -37,6 +38,7 @@
 	"concurrently": "^3.5.0",
 	"json-loader": "^0.5.7",
 	"nodemon": "^1.12.1",
+	"raw-loader": "^0.5.1",
 	"webpack": "^3.6.0"
     }
 }
