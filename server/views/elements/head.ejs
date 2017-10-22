@@ -23,9 +23,9 @@
 	<!-- Image -->
 	<% if(locals.post && post.image){ %>
 	    <meta property="twitter:image"
-		  content="<%- config.url -%><%- post.image -%>" />
+		  content="<%- //config.url -%><%- post.image -%>" />
 	    <meta property="og:image"
-		  content="<%- config.url -%><%- post.image -%>" />
+		  content="<%- //config.url -%><%- post.image -%>" />
 	<% } else { %>
 	    <meta property="twitter:image"
 		  content="<%- config.url -%>/static/img/social.png" />
