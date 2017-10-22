@@ -10,13 +10,27 @@
 	<link rel="stylesheet" href="/static/styles/css/vendor.css">    
 	<link rel="stylesheet" href="/static/styles/css/style.css">
 
-	<!-- Meta -->
+
+	<!-- Title -->
 	<% if(locals.post){ %>
-	<title><%- post.title -%> | Screenplay </title>
-	<meta property="twitter:title" content="<%- post.title -%>" />
+	    <title><%- post.title -%> | Screenplay </title>
+	    <meta property="twitter:title" content="<%- post.title -%>" />
 	<% } else { %>
-	<title><%- config.title -%></title>
-	<meta property="twitter:title" content="<%- config.title -%>" />
+	    <title><%- config.title -%></title>
+	    <meta property="twitter:title" content="<%- config.title -%>" />
+	<% } %>
+
+	<!-- Image -->
+	<% if(locals.post && post.image){ %>
+	    <meta property="twitter:image"
+		  content="<%- config.url -%><%- post.image -%>" />
+	    <meta property="og:image"
+		  content="<%- config.url -%><%- post.image -%>" />
+	<% } else { %>
+	    <meta property="twitter:image"
+		  content="<%- config.url -%>/static/img/social.png" />
+	    <meta property="og:image"
+		  content="<%- config.url -%>/static/img/social.png" />
 	<% } %>
 
 	<meta name="description" content="<%- config.description -%>">
@@ -28,14 +42,10 @@
 	<meta property="twitter:site" content="<%- config.authorTwitter -%>" />  
 	<meta property="twitter:url" content="<%- config.url -%>" />
 	<meta property="twitter:description" content="<%- config.description -%>" />
-	<meta property="twitter:image"
-	      content="<%- config.url -%>/static/img/social.png" />
 	<!-- Facebook -->
 	<meta property="og:url" content="<%- config.url -%>" />
 	<meta property="og:description" content="<%- config.description -%>">
-	<meta property="og:image"
-	      content="<%- config.url -%>/static/img/social.png" />
-
+	
 	<!-- Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44003603-26">
 	</script>
