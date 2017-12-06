@@ -13,9 +13,14 @@ $gray: #999;
 @import "./browse";
 @import "./post";
 
-
-
-
-
-
-
+.cta {
+    padding: 20px 40px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    p,li {
+	font-size: 18px;	
+    }
+    p {
+	padding-bottom: 0;
+    }
+}
