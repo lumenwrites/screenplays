@@ -31,12 +31,12 @@ readFiles(path.resolve(__dirname, '../content')).then(files => {
 	    const md = new ParseMarkdownMetadata(fountainPost)
 	    /* Meta data at the beginning of the file */
 	    const meta = md.props
-
+	    const filename = item.filename.substring(0, item.filename.lastIndexOf('.'))
 	    fountain.parse(fountainPost, (output)=>{
 		var post = new Post({
 		    /* Title */
 		    title: meta.title,
-		    slug: item.filename.substring(0, item.filename.lastIndexOf('.')),
+		    slug: filename,
 		    /* Author */
 		    author: meta.author.split(",")[0],
 		    authorSlug: slug(meta.author.split(",")[0] || "").toLowerCase(),
@@ -47,7 +47,7 @@ readFiles(path.resolve(__dirname, '../content')).then(files => {
 		    titlePage: output.title_page_html, // first page of the screnplay
 		    body: output.script_html,
 		    /* Meta */
-		    image: meta.image,
+		    image: meta.image || ,
 		    imdb: meta.imdb,
 		    pdf: meta.pdf,
 		})

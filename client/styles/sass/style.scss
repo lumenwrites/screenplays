@@ -23,4 +23,8 @@ $gray: #999;
     p {
 	padding-bottom: 0;
     }
+    @media  (max-width: 500px) {
+	padding:10px;
+    }
+    
 }
