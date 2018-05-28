@@ -1,64 +1,53 @@
+const path = require('path')
 const webpack = require('webpack');
-var path = require('path');
+var nodeExternals = require('webpack-node-externals');
+
+const isProd = process.env.NODE_ENV === "production"
 
 function getPlugins() {
-    const plugins = [];
-    if (process.env.NODE_ENV === "production") {
+    const plugins = []
+    if (isProd) {
+	/* Makes React tools development warning go away */
         plugins.push(new webpack.DefinePlugin({
 	    'process.env': {
 		NODE_ENV: JSON.stringify('production')
 	    }
-	}));
-        plugins.push(new webpack.optimize.UglifyJsPlugin({
-            minimize: true,
-            output: {
-                comments: false
-            },
-            compressor: {
-                warnings: false
-            }
-        }));
+	}))
     }
-    // inject ES5 modules as global vars
-    plugins.push(new webpack.ProvidePlugin({
-	$: 'jquery',
-	jQuery: 'jquery'
-    }));
-
+    /* Add jquery */
     plugins.push(
-	new webpack.ProvidePlugin({
-	    $: 'jquery',
-	    jQuery: 'jquery',
-	    'window.jQuery': 'jquery',
-	    Tether: 'tether'
-	})
-    ); 
-    
-
-    return plugins;
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
+    )
+    return plugins
 }
 
 module.exports = {
-    entry: [
-	__dirname + '/index.js'
-    ],
+    /* Tell webpack the root file of our app */
+    entry: './index.js',
+
+    /* Tell webpack to put output file into ./build/server.js. */
     output: {
-	path: __dirname,
-	filename: 'bundle.min.js'
+	path: path.resolve(__dirname, 'dist'),
+	filename: 'client.js'
     },
     module: {
-	loaders: [
+	rules: [
 	    {
+		test: /\.js$/,
 		exclude: /node_modules/,
-		loader: 'babel-loader',
-		query: {
-		    presets: ['es2015', 'stage-2']
+		use: {
+		    loader: "babel-loader",
+		    options: {
+			/* env is the latest js, stage-2 fixes spread({...}) */
+			presets: ['env', 'stage-2'],
+		    },
 		}
-	    },
+	    }
 	]
     },
-    plugins: getPlugins(),
-    resolve: {
-	extensions: ['.js']
-    },
-};
+    plugins: getPlugins()
+}

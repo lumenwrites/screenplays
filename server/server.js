@@ -30,7 +30,7 @@ server.set('views', path.resolve(__dirname, './views'))
 /* Serve static files */
 server.use('/styles', express.static(path.resolve(__dirname, '../client/styles')))
 server.use('/img', express.static(path.resolve(__dirname, '../client/img')))
-server.use('/js', express.static(path.resolve(__dirname, '../client/')))
+server.use('/js', express.static(path.resolve(__dirname, '../client/dist/')))
 server.use('/scripts', express.static(path.resolve(__dirname, './content')))
 
 /* Connect routes */

@@ -1,6 +1,5 @@
-import './vendor/popper.min.js';
-import './vendor/bootstrap.min.js';
-import './vendor/mousetrap.min.js';
+import 'bootstrap'
+import Mousetrap from 'mousetrap'
 
 $( document ).ready(function() {
     console.log( "Heyya!!" );
@@ -11,19 +10,11 @@ $( document ).ready(function() {
 	var cssNode = document.createElement('link');
 	cssNode.type = 'text/css';
 	cssNode.rel = 'stylesheet';
-	cssNode.href = '/static/styles/css/dark.css';
+	cssNode.href = '/styles/css/dark.css';
 	cssNode.media = 'screen';
 	headID.appendChild(cssNode);
     }
-    
-});
 
-/* Maintain scroll position */
-window.onscroll = function() {
-    /* Save scroll posiion on scroll */
-    localStorage.setItem("scroll-" + window.location.pathname, document.documentElement.scrollTop)
-}
-$(document).ready(function() {
     /* Load scroll position if it's saved in local storage */
     var scroll = localStorage.getItem("scroll-" + window.location.pathname)
     if (scroll) {
@@ -32,8 +23,14 @@ $(document).ready(function() {
     }
 });
 
-/* Hotkeys */
+/* Maintain scroll position */
+window.onscroll = function() {
+    /* Save scroll position on scroll */
+    localStorage.setItem("scroll-" + window.location.pathname,
+			 document.documentElement.scrollTop)
+}
 
+/* Hotkeys */
 /* Fullscreen mode  */
 function toggleFullScreen(){
     if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
@@ -63,7 +60,7 @@ function toggleDarkInterface() {
     if (localStorage.getItem("darkInterface")) {
 	/* Remove dark style */
 	localStorage.removeItem("darkInterface");
-	$("link[href='/static/styles/css/dark.css']").remove();
+	$("link[href='/styles/css/dark.css']").remove();
     } else {
 	localStorage.setItem("darkInterface", true);
 	/* Add link to the style to head */
@@ -71,7 +68,7 @@ function toggleDarkInterface() {
 	var cssNode = document.createElement('link');
 	cssNode.type = 'text/css';
 	cssNode.rel = 'stylesheet';
-	cssNode.href = '/static/styles/css/dark.css';
+	cssNode.href = '/styles/css/dark.css';
 	cssNode.media = 'screen';
 	headID.appendChild(cssNode);
     }

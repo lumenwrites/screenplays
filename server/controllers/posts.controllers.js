@@ -34,7 +34,7 @@ export function getPosts(req, res) {
 	.limit(10)
 	.sort('-title').then((posts)=>{
 	    console.log(posts[0].title)
-	    return res.render('index', {posts, config })
+	    return res.render('index', {posts, config, query: searchQuery })
 	}).catch((err)=> console.log(err))
 }
 
