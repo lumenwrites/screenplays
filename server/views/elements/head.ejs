@@ -15,9 +15,13 @@
 	<% if(locals.post){ %>
 	    <title><%- post.title -%> | Screenplay </title>
 	    <meta property="twitter:title" content="<%- post.title -%>" />
+	    <meta property="og:title" content="<%- post.title -%>" />
+	    <meta property="og:type" content="article" />	    
 	<% } else { %>
 	    <title><%- config.title -%></title>
 	    <meta property="twitter:title" content="<%- config.title -%>" />
+	    <meta property="og:title" content="<%- post.title -%>" />
+	    <meta property="og:type" content="website" />	    
 	<% } %>
 
 	<!-- Image -->
