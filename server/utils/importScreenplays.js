@@ -23,7 +23,7 @@ mongoose.connect(MONGO_DB_URL, (error) => {
 /* Read all files from content directory */    
 readFiles(path.resolve(__dirname, '../content')).then(files => {
     console.log( "Loading files ", files.length );
-    files = files.slice(0,5)
+    /* files = files.slice(0,5) */
     files.forEach( (item, index) => {
 	/* For all fountain files */
 	if (item.filename.includes('.fountain')) {
