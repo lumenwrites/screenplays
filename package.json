@@ -14,6 +14,7 @@
 	"build:all": "npm run build:styles && npm run build:client && npm run build:server",
 	"server-test": "cd ./server && NODE_ENV=production node ./index.js",
 	"serve": "cd ./server && NODE_ENV=production forever start --pidFile /home/ray/screenplays.pid ./index.js > log.txt",
+	"serve:dev": "cd ./server && forever start --pidFile /home/ray/screenplays.pid ./index.js > log.txt",	
 	"stop": "forever stop $(cat /home/ray/screenplays.pid)",
 	"importScreenplays": "nodemon ./server/utils/transpile.importScreenplays.js"
     },
