@@ -9,12 +9,12 @@
 		<article>
 		    <div class="icons">
 			<% if(post.author){ %>
-			    <a href="/author/<%- post.authorslug -%>">
+			    <a href="/author/<%- post.authorSlug -%>">
 				<i class="fa fa-user-circle"></i><%- post.author -%>
 			    </a>
 			<% } %>
 			<% if(post.series){ %>
-			    <a href="/series/<%- post.seriesslug -%>">
+			    <a href="/series/<%- post.seriesSlug -%>">
 				<i class="fa fa-list"></i><%- post.series -%>
 			    </a>
 			<% } %>
@@ -38,7 +38,7 @@
 			    <h1><%- post.title -%></h1>			    
 			    <%//- post.titlePage -%>
 			</div>			    
-			<%- post.html -%>
+			<%- post.body -%>
 		    </div>
 		</article>
 

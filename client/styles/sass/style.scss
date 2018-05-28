@@ -1,0 +1,26 @@
+$background: #f6f3ea;
+$text: rgba(0, 0, 0, 0.8);
+$link: #008cba;
+$button: #f66303;
+$orange: #f66303;
+$blue:#008cba;
+$black: rgba(0, 0, 0, 0.8);
+$gray: #999;
+
+@import "./general";
+@import "./fountain";
+@import "./layout";
+@import "./browse";
+@import "./post";
+
+.cta {
+    padding: 20px 40px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    p,li {
+	font-size: 18px;	
+    }
+    p {
+	padding-bottom: 0;
+    }
+}

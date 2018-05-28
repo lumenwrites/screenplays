@@ -1,0 +1,86 @@
+$text-color: #a2a8ab;
+
+body {
+    background: #111111;
+}
+
+header {
+    background: #1f1f1f;
+    .logo {
+	background: #111111;
+	color: #a2a8ab;
+    }
+}
+
+input {
+    background: #111111!important;
+    border: none;
+    color: #a2a8ab!important;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    h1 {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+}
+.modal-dialog {
+    .close {
+	color: white;
+    }
+
+   h3 {
+	color: #a2a8ab;
+    }
+    .modal-content {
+	background-color: #1f1f1f;
+	p {
+	    color: #a2a8ab;
+	}
+    }
+}
+
+article, .panel, footer {
+    background: #1f1f1f!important;
+
+    h1 {
+	border-bottom: 1px solid #5c5f60;
+    }
+    .icons a {
+	color: #a2a8ab!important;
+    }
+}
+
+.subscription-box {
+    .panel, input {
+    border:none;	
+    }
+    .btn-default {
+	background: rgb(41, 41, 41);
+    }
+}
+h1, h2, h3, h4, h5, h6, a, p, li, i, *, .fa {
+    color: #a2a8ab;
+}
+
+.dropdown .dropdown-menu li a {
+    background: #1f1f1f!important;
+    color: #a2a8ab;    
+    border-bottom: rgba(255,255,255,0.15);
+    &:hover {
+	color:white;
+    }
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #5c5f60;
+}
+::-webkit-scrollbar-track {
+      background-color:#1f1f1f;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: #111111;
+}
+

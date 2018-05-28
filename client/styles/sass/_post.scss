@@ -1,0 +1,23 @@
+.post-detail {
+    article {
+	background: white;
+	padding: 40px;
+	margin-top: 10px;
+
+	@media  (max-width: 500px) {
+	    padding:10px;
+	}
+
+	.icons {
+	    a {
+		font-size: 18px;
+		color: #373737;
+		margin-left: 5px;
+		i {
+		    font-size: 18px;
+		    margin: 15px 5px 0 5px;
+		}
+	    }
+	}
+    }
+}

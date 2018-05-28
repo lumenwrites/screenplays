@@ -1,8 +1,10 @@
 import path from 'path'
-import fountain from 'fountain-js'
 
 import express from 'express'
 import mongoose from 'mongoose'
+
+/* Import routes */
+import postsRoutes from './routes/posts.routes'
 
 
 // Connect to db.
@@ -18,27 +20,29 @@ mongoose.connect(MONGO_DB_URL, (error) => {
 })
 
 
-/* Import routes */
-import postsRoutes from './routes/posts.routes'
 
 /* Setup app */
-const app = express()
-app.set('view engine', 'ejs')
-app.set('views', __dirname + '/views')
+const server = express()
+
+server.set('view engine', 'ejs')
+server.set('views', path.resolve(__dirname, './views'))
 
 /* Serve static files */
-app.use('/static', express.static(path.resolve(__dirname, './static')))
-app.use('/scripts', express.static(path.resolve(__dirname, './content')))
+server.use('/styles', express.static(path.resolve(__dirname, '../client/styles')))
+server.use('/img', express.static(path.resolve(__dirname, '../client/img')))
+server.use('/js', express.static(path.resolve(__dirname, '../client/')))
+server.use('/scripts', express.static(path.resolve(__dirname, './content')))
 
 /* Connect routes */
-app.use('/', postsRoutes)
+server.use('/', postsRoutes)
 
 // Routes
-app.get('/', function (req, res) {
-
+server.get('/', function (req, res) {
+    console.log('test')
+    return res.send('test')
 })
 
 const port = process.env.PORT || 3000
-app.listen(port, function () {
+server.listen(port, function () {
     console.log('Running on port 3000!')
 })
