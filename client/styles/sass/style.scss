@@ -7,8 +7,9 @@ $blue:#008cba;
 $black: rgba(0, 0, 0, 0.8);
 $gray: #999;
 
-@import "./general";
 @import "./fountain";
+@import "./general";
+@import "./elements";
 @import "./layout";
 @import "./browse";
 @import "./post";
@@ -27,4 +28,8 @@ $gray: #999;
 	padding:10px;
     }
     
+}
+
+.panel {
+    background: white;
 }

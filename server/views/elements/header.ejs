@@ -16,14 +16,19 @@
 		<div class="main-menu dropdown">
 		    <i class="fa fa-bars"></i>
 
-		    <ul class="dropdown-menu" role="menu">
-			<li>
-			    <a data-toggle="modal" data-target="#help-modal">
+		    <div class="dropdown-menu" role="menu">
+			    <a class="menu-item"
+			       data-toggle="modal" data-target="#help-modal">
 				<i class="fa fa-question-circle"></i>Help
 			    </a>
-			    <a id="toggleDarkInterface">
+			    <a class="menu-item" id="toggleDarkInterface">
 				<i class="fa fa-adjust"></i> Dark mode
 			    </a>
+			    <a class="menu-item"
+			       data-toggle="modal" data-target="#submit-script">
+				<i class="fa fa-envelope"></i> Submit your script
+			    </a>
+
 			    <!-- 
 			    <a href="/browse/top">
 				<i class="fa fa-trophy"></i> Most Read
@@ -38,7 +43,8 @@
 				<i class="fa fa-film"></i> Top Movies
 			    </a>
 			    -->			    
-			    <a href="https://fictionhub.io/post/writing-resources/">
+			    <a class="menu-item"
+			       href="https://fictionhub.io/post/writing-resources/">
 				<i class="fa fa-book"></i> Screenwriting <br/> Resources
 			    </a>
 
